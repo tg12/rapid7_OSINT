@@ -21,6 +21,7 @@
 # latest files.
 
 from __future__ import print_function
+import os
 import sys
 import bs4
 import requests
@@ -64,5 +65,12 @@ for each_link in links:
         url_and_size.append(tmp_lst)
 
 for each in sorted(url_and_size, key=itemgetter(1)):
-    print(each[0])  # url
-    print(each[1])  # size in MB
+     print(each[0])  # url
+     print(each[1])  # size in MB
+     file_name = each[0].split('/')[-1]
+     if os.path.exists(file_name) == False:
+         try:
+             with open(file_name, 'wb') as f:
+                 f.write(requests.get(each[0]).content)
+         except:
+             print('Unable to download file: {}'.format((each[0])))
