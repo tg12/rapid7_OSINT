@@ -139,6 +139,9 @@ def parse_json_zips():
 def parse_json_headers():
     headers = {}
     for INFILE in glob.glob("*.json.gz"):
+        port_no = INFILE.replace('.json.gz', '')
+        port_no = str(port_no.split('_')[-1])
+        print("[+]debug, port:..." + str(port_no))
         with gzip.open(INFILE) as f:
             print('[+] Parsing JSON: {}'.format(INFILE))
             for line in f:
