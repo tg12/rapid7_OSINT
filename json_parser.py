@@ -121,9 +121,9 @@ def to_utf(data):
 
 def parse_json_zips():
     for INFILE in glob.glob("*.json.gz"):
-        port_no = INFILE.replace('.json.gz', '')
-        port_no = str(port_no.split('_')[-1])
-        print("[+]debug, port:..." + str(port_no))
+        port_no = INFILE.replace('.json.gz', '') # this is needed to identify the different data sets, by port number.
+        port_no = str(port_no.split('_')[-1]) # this is needed to identify the different data sets, by port number.
+        print("[+]debug, port:..." + str(port_no)) # this is needed to identify the different data sets, by port number.
         with gzip.open(INFILE) as f:
             print('[+] Parsing JSON: {}'.format(INFILE))
             for line in f:
@@ -142,9 +142,9 @@ def parse_json_zips():
 def parse_json_headers():
     headers = {}
     for INFILE in glob.glob("*.json.gz"):
-        port_no = INFILE.replace('.json.gz', '')
-        port_no = str(port_no.split('_')[-1])
-        print("[+]debug, port:..." + str(port_no))
+        port_no = INFILE.replace('.json.gz', '') # this is needed to identify the different data sets, by port number. 
+        port_no = str(port_no.split('_')[-1])   # this is needed to identify the different data sets, by port number.
+        print("[+]debug, port:..." + str(port_no)) # this is needed to identify the different data sets, by port number.
         with gzip.open(INFILE) as f:
             print('[+] Parsing JSON: {}'.format(INFILE))
             for line in f:
