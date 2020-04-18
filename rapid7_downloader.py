@@ -26,17 +26,30 @@ import sys
 import bs4
 import requests
 from operator import itemgetter
+from tabulate import tabulate
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+from fake_useragent import UserAgent
+ua = UserAgent()
 
 base_url = "https://opendata.rapid7.com"
-url = 'https://opendata.rapid7.com/sonar.http/'
+url = 'https://opendata.rapid7.com/sonar.https/'
 ext = '.json.gz'
 url_and_size = []
 
 # number of bytes in a megabyte
 MBFACTOR = float(1 << 20)
 
+#thanks to:https://www.geeksforgeeks.org/python-sort-list-according-second-element-sublist/
+def Sort(sub_li): 
+    l = len(sub_li) 
+    for i in range(0, l): 
+        for j in range(0, l-i-1): 
+            if (sub_li[j][1] > sub_li[j + 1][1]): 
+                tempo = sub_li[j] 
+                sub_li[j]= sub_li[j + 1] 
+                sub_li[j + 1]= tempo 
+    return sub_li 
 
 def extract(content):
     links = []
@@ -57,20 +70,25 @@ for each_link in links:
         response = requests.head(
             base_url + each_link,
             allow_redirects=True,
-            verify=False)
+            verify=False, headers={
+                'User-Agent': ua.random})
         # print("\n".join([('{:<40}: {}'.format(k, v)) for k, v in response.headers.items()]))
         size = response.headers.get('content-length', 0)
         # print('{:<40}: {:.2f} MB'.format('FILE SIZE', int(size) / MBFACTOR))
         tmp_lst.append(float(int(size) / MBFACTOR))
         url_and_size.append(tmp_lst)
 
-for each in sorted(url_and_size, key=itemgetter(1)):
-     print(each[0])  # url
-     print(each[1])  # size in MB
-     file_name = each[0].split('/')[-1]
-     if os.path.exists(file_name) == False:
-         try:
-             with open(file_name, 'wb') as f:
-                 f.write(requests.get(each[0]).content)
-         except:
-             print('Unable to download file: {}'.format((each[0])))
+sorted_li = Sort(url_and_size)
+print(tabulate(sorted_li, headers=['URL', 'Size']))
+
+
+# for each in sorted(url_and_size, key=itemgetter(1)):
+     # print(each[0])  # url
+     # print(each[1])  # size in MB
+     # file_name = each[0].split('/')[-1]
+     # if os.path.exists(file_name) == False:
+         # try:
+             # with open(file_name, 'wb') as f:
+                 # f.write(requests.get(each[0]).content)
+         # except:
+             # print('Unable to download file: {}'.format((each[0])))
