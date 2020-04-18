@@ -215,7 +215,7 @@ series_txt_file.close()
 ###############################################
 ###############################################
 ###############################################
-OSINT_search_list = ["HP", "phone", "cisco"]
+OSINT_search_list = ["HP", "phone", "cisco", "DVR", "Index of", "Schneider", "Industrial", "search"]
 #This searches for HP Printers, iLO devices, Any phones and any Cisco devices wide open to the world
 #Please feel free to add your own, cameras, DVR's, IoT devices
 #################################################
