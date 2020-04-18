@@ -221,7 +221,7 @@ OSINT_search_list = ["HP", "phone", "cisco", "DVR", "Index of", "Schneider", "In
 #################################################
 for each in OSINT_search_list:
     osint_search = df[df['Server'].str.contains(each)]
-    osint_search_results = open('osint_data.txt', 'w')
+    osint_search_results = open('osint_data.txt', 'a')
     # print(osint_search['Host'].tolist())
     osint_search_results.write(osint_search.to_string())
     osint_search_results.close()
