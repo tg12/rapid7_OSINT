@@ -202,14 +202,14 @@ def parse_json_headers():
 
 parse_json_zips()
 #debug,debug,debug,debug ----> counting the occurances of each type to fine tune. Helps create ignore_hosts above
-#print(pd.Series(server_vers).value_counts().to_string())
-#series_txt_file = open('data.txt', 'w')
-#series_txt_file.write(pd.Series(server_vers).value_counts().to_string())
-#series_txt_file.close()
+print(pd.Series(server_vers).value_counts().to_string())
+series_txt_file = open('value_counts_data.txt', 'w')
+series_txt_file.write(pd.Series(server_vers).value_counts().to_string())
+series_txt_file.close()
 
 df = pd.DataFrame(host_server, columns = ['Host', 'Server'])
 df.sort_values(by=['Server'], ascending = True)
-series_txt_file = open('df_servers.txt', 'w')
+series_txt_file = open('list_of_servers.txt', 'w')
 series_txt_file.write(df.to_string())
 series_txt_file.close()
 ###############################################
