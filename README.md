@@ -19,13 +19,11 @@ https://raw.githubusercontent.com/tg12/rapid7_OSINT/master/list_of_servers.txt
 
 This is a count of how often each server type if you will occurs. 
 
-in "scans" I have included two. One very interesting which I had to Google. Scary stuff...
+in the "scans" folder I have included two. One very interesting which I had to Google. Scary stuff...
 
-https://sec-consult.com/en/blog/2018/05/tr-069-iot-before-it-was-cool/
+* https://sec-consult.com/en/blog/2018/05/tr-069-iot-before-it-was-cool/ Basically remote management for CPE devices (home broadband)
 
-Basically remote management for CPE devices (home broadband)
-
-The other Hikvision, The popular home security cameras. 
+* The other Hikvision, The popular home security cameras. 
 
 Here is a list URL/Size in MB, It's organised by port number. It's a trade off by file size and what ports would be useful and most common. 
 I don't have enough disk space on any of my fast VPS's to get the large one but I'd like to some day. 
