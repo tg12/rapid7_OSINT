@@ -81,9 +81,9 @@ for each_link in links:
 sorted_li = Sort(url_and_size)
 print(tabulate(sorted_li, headers=['URL', 'Size']))
 
-for each in sorted(url_and_size, key=itemgetter(1)):
-     print(each[0])  # url
-     # print(each[1])  # size in MB
+# for each in sorted(url_and_size, key=itemgetter(1)):
+#      print(each[0])  # url
+#      print(each[1])  # size in MB
 
 # for each in sorted(url_and_size, key=itemgetter(1)):
      # print(each[0])  # url
