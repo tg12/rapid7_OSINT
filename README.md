@@ -13,11 +13,19 @@
 Remove the monopoly "Web Servers"...Apache, nginx, Microsoft, lighttpd, xxxxxxxx-xxxxx, xxxx. 
 These have their own tools and associated problems and this is not in scope here. We are looking here for the interesting, quirky, slightly obscure. Mainly IoT Devices, Some uncommon stuff. Cameras, Printers, Service Control Mechanisms etc.
 
-Here I looked at Port **4443** and port **5001** and this is the list of services minus the ones removed as discussed.
+Here I looked at **most" ports excluding the big files and this is the list of services minus the ones removed as discussed.
 
-https://raw.githubusercontent.com/tg12/rapid7_OSINT/master/data.txt
+https://raw.githubusercontent.com/tg12/rapid7_OSINT/master/list_of_servers.txt
 
 This is a count of how often each server type if you will occurs. 
+
+in "scans" I have included two. One very interesting which I had to Google. Scary stuff...
+
+https://sec-consult.com/en/blog/2018/05/tr-069-iot-before-it-was-cool/
+
+Basically remote management for CPE devices (home broadband)
+
+The other Hikvision, The popular home security cameras. 
 
 Here is a list URL/Size in MB, It's organised by port number. It's a trade off by file size and what ports would be useful and most common. 
 I don't have enough disk space on any of my fast VPS's to get the large one but I'd like to some day. 
