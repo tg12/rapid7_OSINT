@@ -33,7 +33,7 @@ from fake_useragent import UserAgent
 ua = UserAgent()
 
 base_url = "https://opendata.rapid7.com"
-url = 'https://opendata.rapid7.com/sonar.https/'
+url = 'https://opendata.rapid7.com/sonar.http/'
 ext = '.json.gz'
 url_and_size = []
 
