@@ -2,8 +2,8 @@
 
 **default searches** 
 
-* "HP" - Printers, iLO devices!  Nothing personal but this is low hanging fruit. Alot of these include the serial number in clear text. If you are a "Social Engineer" of sorts I am sure this is useful to some. 
-* "phone" - Video conferencing is a big thing now right?? Wonder who these belong to and if you can just join int? 
+* "HP" - Printers, iLO devices!  Nothing personal against HP but it's low hanging fruit Alot of these include the serial number in clear text. If you are a "Social Engineer" of sorts I am sure this is useful to some. 
+* "phone" - Lot's of open phones that should not be exposed.
 * "cisco" - Unwitting Sysadmin who have exposted their core network to the world. 
 * "DVR" - Free TV right from the comfort of your own living room... or someone elses. 
 * "Index of" - Free stuff
