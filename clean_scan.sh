@@ -2,6 +2,8 @@ rm value_counts_data.txt
 rm list_of_servers.txt
 rm osint_data.txt
 
+rm *.json.gz
+
 wget https://opendata.rapid7.com/sonar.http/2020-03-04-1583356503-etcd_version_2379.json.gz
 wget https://opendata.rapid7.com/sonar.http/2020-03-23-1584933672-http_get_50880.json.gz
 wget https://opendata.rapid7.com/sonar.http/2020-03-23-1584936649-http_get_16992.json.gz
@@ -51,10 +53,10 @@ wget https://opendata.rapid7.com/sonar.http/2020-03-01-1583021061-http_get_top1m
 wget https://opendata.rapid7.com/sonar.http/2020-03-21-1584807276-http_get_7547.json.gz
 wget https://opendata.rapid7.com/sonar.http/2020-03-22-1584866866-http_get_9000.json.gz
 wget https://opendata.rapid7.com/sonar.http/2020-03-20-1584704918-http_get_3000.json.gz
-#wget https://opendata.rapid7.com/sonar.http/2020-03-22-1584897909-http_get_8088.json.gz
-#wget https://opendata.rapid7.com/sonar.http/2020-03-22-1584890386-http_get_5000.json.gz
-#wget https://opendata.rapid7.com/sonar.http/2020-03-22-1584841075-http_get_8081.json.gz
-#wget https://opendata.rapid7.com/sonar.http/2020-03-04-1583280264-http_get_9200.json.gz
+wget https://opendata.rapid7.com/sonar.http/2020-03-22-1584897909-http_get_8088.json.gz
+wget https://opendata.rapid7.com/sonar.http/2020-03-22-1584890386-http_get_5000.json.gz
+wget https://opendata.rapid7.com/sonar.http/2020-03-22-1584841075-http_get_8081.json.gz
+wget https://opendata.rapid7.com/sonar.http/2020-03-04-1583280264-http_get_9200.json.gz
 #wget https://opendata.rapid7.com/sonar.http/2020-03-22-1584915524-http_get_8888.json.gz
 #wget https://opendata.rapid7.com/sonar.http/2020-03-21-1584804797-http_get_8000.json.gz
 #wget https://opendata.rapid7.com/sonar.http/2020-03-20-1584683978-http_get_2086.json.gz
@@ -62,3 +64,4 @@ wget https://opendata.rapid7.com/sonar.http/2020-03-20-1584704918-http_get_3000.
 #wget https://opendata.rapid7.com/sonar.http/2020-03-21-1584783827-http_get_8080.json.gz
 #wget https://opendata.rapid7.com/sonar.http/2020-03-23-1584952337-http_get_80.json.gz
 
+echo "done!"
