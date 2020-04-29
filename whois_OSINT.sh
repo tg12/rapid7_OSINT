@@ -23,6 +23,6 @@ do
 
     # Print tab delimited with headers
     #echo "#Query,Subnet,Registrant,AS Number,Country,Issuer,Registry Date,Peer ASNs"
-    echo -e "$IP\t$SUBNET\t\t\t\t$REGISTRANT\t$ASN\t$COUNTRY\t$ISSUER" >>
+    echo -e "$IP\t$SUBNET\t\t\t\t$REGISTRANT\t$ASN\t$COUNTRY\t$ISSUER" >> osint_WHOIS.txt
 
 done < osint_data.txt
