@@ -76,10 +76,23 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 
 def diff_dates(date1, date2):
+    """
+    Returns the difference between two dates.
+
+    Args:
+        date1: (todo): write your description
+        date2: (todo): write your description
+    """
     return abs((date2 - date1).days)
 
 
 def whois_domain(domain_name):
+    """
+    Checks if a domain has changed.
+
+    Args:
+        domain_name: (str): write your description
+    """
 
     RES = {}
     try:
@@ -193,6 +206,12 @@ web_server_ports = [80,
 
 
 def spider(base_url):
+    """
+    Generate a url.
+
+    Args:
+        base_url: (str): write your description
+    """
     auxiliaryList = []
     page_id = 1
     print("[+]debug, checking..." + str(base_url))
@@ -238,6 +257,12 @@ def spider(base_url):
 
 
 def get_title(html):
+    """
+    Extract title from html.
+
+    Args:
+        html: (str): write your description
+    """
     html_lowered = html.lower()
     begin = html_lowered.find('<title>')
     end = html_lowered.find('</title>')
@@ -249,6 +274,12 @@ def get_title(html):
 
 
 def to_ascii(data):
+    """
+    Convert data to utf8.
+
+    Args:
+        data: (todo): write your description
+    """
     if isinstance(data, str):
         return data.encode("ascii", errors="ignore")
     elif isinstance(data, bytes):

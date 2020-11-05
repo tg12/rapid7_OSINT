@@ -37,6 +37,12 @@ if regex is not None:
 
 
 def check_whois(ip):
+    """
+    Checks the ip address is valid ip address.
+
+    Args:
+        ip: (str): write your description
+    """
     obj = IPWhois(ip)
     result = obj.lookup_rdap(depth=1)
     # print (result) #debug

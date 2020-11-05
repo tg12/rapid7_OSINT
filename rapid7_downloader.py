@@ -60,6 +60,12 @@ MBFACTOR = float(1 << 20)
 
 #thanks to:https://www.geeksforgeeks.org/python-sort-list-according-second-element-sublist/
 def Sort(sub_li): 
+    """
+    Returns a list of sub_li.
+
+    Args:
+        sub_li: (todo): write your description
+    """
     l = len(sub_li) 
     for i in range(0, l): 
         for j in range(0, l-i-1): 
@@ -70,6 +76,12 @@ def Sort(sub_li):
     return sub_li 
 
 def extract(content):
+    """
+    Extracts all links.
+
+    Args:
+        content: (str): write your description
+    """
     links = []
     soup = bs4.BeautifulSoup(content)
     for tag in soup.find_all():
