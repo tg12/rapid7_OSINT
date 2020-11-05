@@ -84,60 +84,119 @@ x_powered_by_re = re.compile('X-Powered-By: (?P<x_powered_by>.+?)\r?\n', flags=r
 
 
 def write_to_csv(row):
+    """
+    Writes a csv row to a csv file.
+
+    Args:
+        row: (str): write your description
+    """
     with open(OUTFILE, 'a+') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
         writer.writerow(row)
     csvfile.close()
 
 def get_x_powered_by(html):
+    """
+    Get x - x x - x x - x - x - y - x - x - y - x - y - x - y - z
+
+    Args:
+        html: (str): write your description
+    """
     match_obj = x_powered_by_re.search(html)
     if match_obj != None:
         match_obj = match_obj.group('x_powered_by').strip()
     return match_obj
 
 def get_content_type(html):
+    """
+    Return the content type of the content type.
+
+    Args:
+        html: (todo): write your description
+    """
     match_obj = content_type_re.search(html)
     if match_obj != None:
         match_obj = match_obj.group('content_type').strip()
     return match_obj
 
 def get_content_encoding(html):
+    """
+    Get content encoding.
+
+    Args:
+        html: (str): write your description
+    """
     match_obj = content_encoding_re.search(html)
     if match_obj != None:
         match_obj = match_obj.group('content_encoding').strip()
     return match_obj
 
 def get_server(html):
+    """
+    Returns the server.
+
+    Args:
+        html: (str): write your description
+    """
     match_obj = server_re.search(html)
     if match_obj != None:
         match_obj = match_obj.group('server').strip()
     return match_obj
 
 def get_title(html):
+    """
+    Get title from the title.
+
+    Args:
+        html: (todo): write your description
+    """
     match_obj = title_re.search(html)
     if match_obj != None:
         match_obj = match_obj.group('title').strip()
     return match_obj
 
 def get_last_modified(html):
+    """
+    Get the last modified modified modification of an object.
+
+    Args:
+        html: (str): write your description
+    """
     match_obj = last_modified_re.search(html)
     if match_obj != None:
         match_obj = match_obj.group('last_modified').strip()
     return match_obj
 
 def to_ascii(data):
+    """
+    Convert data to utf8.
+
+    Args:
+        data: (todo): write your description
+    """
     if isinstance(data, str):
         return data.encode("ascii", errors="ignore")
     elif isinstance(data, bytes):
         return data.decode("ascii", errors="ignore")
 
 def to_utf(data):
+    """
+    Convert a string to utf.
+
+    Args:
+        data: (todo): write your description
+    """
     if isinstance(data, str):
         return data.encode("utf8", errors="ignore")
     elif isinstance(data, bytes):
         return data.decode("utf8", errors="ignore")
 
 def parse_json_zips():
+    """
+    Parse the csv file.
+
+    Args:
+    """
     for INFILE in glob.glob("*.json.gz"):
         port_no = INFILE.replace('.json.gz', '') # this is needed to identify the different data sets, by port number.
         port_no = str(port_no.split('_')[-1]) # this is needed to identify the different data sets, by port number.
@@ -158,6 +217,11 @@ def parse_json_zips():
                 write_to_csv(tmp_lst)
 
 def parse_json_headers():
+    """
+    Parses the headers.
+
+    Args:
+    """
     headers = {}
     for INFILE in glob.glob("*.json.gz"):
         port_no = INFILE.replace('.json.gz', '') # this is needed to identify the different data sets, by port number. 

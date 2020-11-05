@@ -107,6 +107,12 @@ x_powered_by_re = re.compile(
 
 
 def write_to_csv(row):
+    """
+    Writes a csv row to a csv file.
+
+    Args:
+        row: (str): write your description
+    """
     with open(OUTFILE, 'a+') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
         writer.writerow(row)
@@ -114,6 +120,12 @@ def write_to_csv(row):
 
 
 def get_x_powered_by(html):
+    """
+    Get x - x x - x - x - y - x - x - x - y - x - x - x - x - y -
+
+    Args:
+        html: (str): write your description
+    """
     match_obj = x_powered_by_re.search(html)
     if match_obj is not None:
         match_obj = match_obj.group('x_powered_by').strip()
@@ -121,6 +133,12 @@ def get_x_powered_by(html):
 
 
 def get_content_type(html):
+    """
+    Return the content type of the content type.
+
+    Args:
+        html: (todo): write your description
+    """
     match_obj = content_type_re.search(html)
     if match_obj is not None:
         match_obj = match_obj.group('content_type').strip()
@@ -128,6 +146,12 @@ def get_content_type(html):
 
 
 def get_content_encoding(html):
+    """
+    Get content encoding.
+
+    Args:
+        html: (str): write your description
+    """
     match_obj = content_encoding_re.search(html)
     if match_obj is not None:
         match_obj = match_obj.group('content_encoding').strip()
@@ -135,6 +159,12 @@ def get_content_encoding(html):
 
 
 def get_server(html):
+    """
+    Returns the server.
+
+    Args:
+        html: (str): write your description
+    """
     match_obj = server_re.search(html)
     if match_obj is not None:
         match_obj = match_obj.group('server').strip()
@@ -142,6 +172,12 @@ def get_server(html):
 
 
 def get_title(html):
+    """
+    Get title.
+
+    Args:
+        html: (todo): write your description
+    """
     match_obj = title_re.search(html)
     if match_obj is not None:
         match_obj = match_obj.group('title').strip()
@@ -149,6 +185,12 @@ def get_title(html):
 
 
 def get_last_modified(html):
+    """
+    Get the last modified modification of an object.
+
+    Args:
+        html: (str): write your description
+    """
     match_obj = last_modified_re.search(html)
     if match_obj is not None:
         match_obj = match_obj.group('last_modified').strip()
@@ -156,6 +198,12 @@ def get_last_modified(html):
 
 
 def to_ascii(data):
+    """
+    Convert data to utf8.
+
+    Args:
+        data: (todo): write your description
+    """
     if isinstance(data, str):
         return data.encode("ascii", errors="ignore")
     elif isinstance(data, bytes):
@@ -163,6 +211,12 @@ def to_ascii(data):
 
 
 def to_utf(data):
+    """
+    Convert a string to utf.
+
+    Args:
+        data: (todo): write your description
+    """
     if isinstance(data, str):
         return data.encode("utf8", errors="ignore")
     elif isinstance(data, bytes):
@@ -183,6 +237,11 @@ ignore_hosts = [
 
 
 def parse_json_zips():
+    """
+    Parse the zips.
+
+    Args:
+    """
     for INFILE in glob.glob("*.json.gz"):
         #######################################################################
         # this is needed to identify the different data sets, by port number.
@@ -219,6 +278,11 @@ def parse_json_zips():
 
 
 def parse_json_headers():
+    """
+    Parses the headers.
+
+    Args:
+    """
     headers = {}
     for INFILE in glob.glob("*.json.gz"):
         # this is needed to identify the different data sets, by port number.
@@ -266,6 +330,12 @@ OSINT_search_list = ["squid", "proxy"]
 
 
 def check_proxy(proxies_dicts):
+    """
+    Check if a http proxy.
+
+    Args:
+        proxies_dicts: (dict): write your description
+    """
     try:
         r = requests.get(
             random.choice(check_ip),
