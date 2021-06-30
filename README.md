@@ -35,6 +35,8 @@ https://opendata.rapid7.com
 
 **I am not affiliated, associated, authorized, endorsed by, or in any way officially connected with rapid7.com, or any of its subsidiaries or its affiliates.**
 
+[Download Datasets from here](http://www.jamessawyer.co.uk/data_sets/)
+
 **THE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THIS OR THE USE OR OTHER DEALINGS.** 
 
 If you feel you liked this and it was useful, Please help me out rent a bigger VPS to get the bigger datasets. 
